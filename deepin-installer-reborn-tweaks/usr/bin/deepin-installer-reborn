@@ -1,0 +1,20 @@
+#!/bin/bash
+
+umount /dev/sd*
+
+
+
+if [ "$(grep "pt_BR" /etc/default/locale)" != "" ]; then
+
+	if [ "$(grep abnt2 /proc/cmdline)" != "" ]; then
+
+	    /usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrbindeepin-installer-reborn --conf /usr/share/deepin-installer-reborn/ptbr.ini
+
+	else
+
+	    /usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrbindeepin-installer-reborn --conf /usr/share/deepin-installer-reborn/ptbrUS.ini
+
+	fi
+fi
+
+/usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrbindeepin-installer-reborn

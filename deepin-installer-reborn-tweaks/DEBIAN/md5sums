@@ -1,0 +1,10 @@
+8440c023f32ce96a8ee0f808f290a769  DEBIAN/control
+2ee7f715cb40f1bf5e0b25737f361fff  DEBIAN/postinst
+d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+a0d6614775060d36b0dfb62a84bcd830  DEBIAN/dpkg-divert
+5657707a380608b9f8f8c16946d7832c  DEBIAN/postrm
+2181edeffc2344b635bae9f154d85430  DEBIAN/preinst
+3a2aa87499e1f1d61ecb2423ab68f2a0  usr/bin/deepin-installer-reborn
+b2f501977996bdbf1463a92ab5af23e6  usr/share/deepin-installer-reborn/ptbrUS.ini
+36a417a30c18290e1586a8abd0a7a626  usr/share/deepin-installer-reborn/ptbr.ini
+bbc52141fe2738f873ff50663d6b2b69  usr/share/deepin-installer-reborn/resources/default_wallpaper.jpg

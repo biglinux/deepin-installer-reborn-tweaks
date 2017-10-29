@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+package_name=deepin-installer-reborn-tweaks
+sed -i 's|/usr/lib/deepin-daemon/grub2|/usr/lib/deepin-daemon/grub5|g;s|e /etc/default/grub|e /etc/default/grub5|g' /usr/share/deepin-installer-reborn/hooks/in_chroot/50_setup_bootloader_x86.job
+rm -Rf /usr/share/deepin-installer-reborn/resources/slide/
+
+exit 0

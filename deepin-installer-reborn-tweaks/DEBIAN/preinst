@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+package_name=deepin-installer-reborn-tweaks
+mkdir -p "/usr/share/dpkgdivert/deepin-installer-reborn-tweaks"
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrbindeepin-installer-reborn" --rename "/usr/bin/deepin-installer-reborn"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrsharedeepin-installer-rebornresourcesdefault_wallpaper.jpg" --rename "/usr/share/deepin-installer-reborn/resources/default_wallpaper.jpg"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/usr/bin/deepin-installer-reborn")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrbindeepin-installer-reborn" --rename "/usr/bin/deepin-installer-reborn"
+fi
+if [ "$(dpkg-divert --list "/usr/share/deepin-installer-reborn/resources/default_wallpaper.jpg")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/deepin-installer-reborn-tweaks/usrsharedeepin-installer-rebornresourcesdefault_wallpaper.jpg" --rename "/usr/share/deepin-installer-reborn/resources/default_wallpaper.jpg"
+fi
+;;
+esac
+exit 0
